@@ -25,7 +25,8 @@ def crossCorr(x,y):
     
     # compute cross correlation
     for eta in range(maxShift):
-        for i in range(x.size):
-            z[eta] = (x[i] * yPad[i+eta]) + z[eta]
+        z[eta] = np.sum(np.multiply(x,yPad[eta:x.size + eta]))
+        #for i in range(x.size):
+        #    z[eta] = (x[i] * yPad[i+eta]) + z[eta]
 
     return z

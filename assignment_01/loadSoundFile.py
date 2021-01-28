@@ -6,7 +6,7 @@ Created on Tue Jan 26 22:40:56 2021
 """
 
 # Imports
-import scipy.io as sio
+import scipy.io.wavfile as sio
 import numpy as np
 
 '''
@@ -16,7 +16,7 @@ Output: x 1D numpy array (float)
 '''
 def loadSoundFile(filename):
     # read audio file and store as ndarray data
-    sampRate, data = sio.wavfile.read(filename)
+    sampRate, data = sio.read(filename)
     
     # reduce to 1 channel and convert to float
     x = np.array(data[:,0], dtype=float)
