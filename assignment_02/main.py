@@ -7,6 +7,8 @@ Created on Wed Feb  3 13:33:36 2021
 
 # Imports
 from myTimeConv import myTimeConv
+from loadSoundFile import loadSoundFile
+from CompareConv import CompareConv
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -30,3 +32,10 @@ plt.plot(y_time)
 # plt.savefig('results/01-convolution.png')
 
 plt.show()
+
+# load audio files
+x = loadSoundFile('piano.wav')
+h = loadSoundFile(('impulse-response.wav'))
+
+# compare convolution functions
+m, mabs, stdev, time = CompareConv(x, h)

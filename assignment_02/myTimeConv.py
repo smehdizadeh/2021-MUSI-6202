@@ -21,7 +21,7 @@ Output: y convolution output (1D Numpy array)
 '''
 def myTimeConv(x,h): 
     # zero pad x
-    xPad = np.pad(x, (h.size,h.size), 'constant', constant_values=(0.0,0.0))
+    xPad = np.pad(x, (h.size-1,h.size-1), 'constant', constant_values=(0.0,0.0))
     
     # reflect x about the y axis
     xFlip = np.flip(xPad)
