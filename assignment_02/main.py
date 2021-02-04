@@ -12,6 +12,7 @@ from CompareConv import CompareConv
 import numpy as np
 import matplotlib.pyplot as plt
 
+############### QUESTION 1 #################
 # create DC signal x
 x = np.ones(200, dtype=float)
 
@@ -33,9 +34,18 @@ plt.plot(y_time)
 
 plt.show()
 
+############## QUESTION 2 #################
 # load audio files
 x = loadSoundFile('piano.wav')
 h = loadSoundFile(('impulse-response.wav'))
 
 # compare convolution functions
 m, mabs, stdev, time = CompareConv(x, h)
+
+# Save in text file
+f = open("results/02-comparison.txt", "w")
+f.write('m = %s\n' % m)
+f.write('mabs = %s\n' % mabs)
+f.write('stdev = %s\n' % stdev)
+f.write('time = [%s %s]\n' % (time[0],time[1]))
+f.close()

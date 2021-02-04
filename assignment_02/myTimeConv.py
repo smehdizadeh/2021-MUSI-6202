@@ -23,14 +23,15 @@ def myTimeConv(x,h):
     # zero pad x
     xPad = np.pad(x, (h.size-1,h.size-1), 'constant', constant_values=(0.0,0.0))
     
-    # reflect x about the y axis
-    xFlip = np.flip(xPad)
+    # reflect h about the y axis
+    hFlip = np.flip(h)
     
     # initialize y
     convSize = x.size + h.size - 1
     y = np.zeros(convSize)
     
-    # compute convolution
+    # compute cross correlation
     for n in range(convSize):
-        y[n] = np.sum(np.multiply(h,xFlip[n:n + h.size]))
+        y[n] = np.sum(np.multiply(hFlip,xPad[n:n + h.size]))
+        
     return y
