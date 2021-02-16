@@ -36,6 +36,6 @@ plt.ylabel('amplitude')
 plt.plot(t[0:int(0.005*44100)],x[0:int(0.005*44100)])
 
 # Export figure
-plt.savefig('results/01-sinusoid.png')
+# plt.savefig('results/01-sinusoid.png')
 
 plt.show()
