@@ -1,0 +1,7 @@
+Q4.3:
+With the rectangular window, you see most of the energy of the signal contained in the fundamental
+and first harmonic, with a sharp drop off for the rest of the harmonics.
+
+With the hanning window, you can start to see "smearing" in the frequency domain,
+with relatively less energy in the fundamental and first harmonic, and 
+more the second and third harmonics than before.
