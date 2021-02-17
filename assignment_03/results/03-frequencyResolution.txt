@@ -1,0 +1,7 @@
+Q3.4:
+Frequency resolution = (sample_rate/2)/(input_size/2) = 22050 / 11025 = 2 Hz
+
+Q3.5:
+Zero-padding the input in this way would double its length from 22050 to 44100 samples.
+Frequency resolution = 22050 / 22050 = 1 Hz.
+Zero-padding increases frequency resolution.
